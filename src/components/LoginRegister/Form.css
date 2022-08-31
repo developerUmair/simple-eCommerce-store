@@ -1,0 +1,62 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+  outline: none;
+}
+
+.container .outer {
+  width: 100%;
+  margin-top: 40px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.outer #form {
+  width: 200%;
+  position: relative;
+  display: flex;
+  margin: auto;
+}
+
+.page {
+  /* margin-top: 70px; */
+  width: 40%;
+  padding: 50px;
+
+  /* From https://css.glass */
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+label {
+  text-align: left;
+  font-size: 20px;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.element {
+  position: relative;
+}
+
+.element input {
+  height: 40px;
+  border-radius: 4px;
+  margin-bottom: 20px;
+  background-color: #78909c;
+  border: 1px solid gray;
+  padding-left: 40px;
+  font-size: 20px;
+  letter-spacing: 1px;
+}
+
+input::placeholder {
+  font-size: 20px;
+  color: whitesmoke;
+}
