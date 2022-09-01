@@ -2,10 +2,8 @@ import {
   Box,
   Button,
   ButtonGroup,
-  Divider,
   FormControl,
   FormControlLabel,
-  FormLabel,
   Grid,
   Radio,
   RadioGroup,
@@ -19,6 +17,17 @@ import RemoveIcon from "@mui/icons-material/Remove";
 import AddIcon from "@mui/icons-material/Add";
 import { Stack } from "@mui/system";
 import CardGiftcardIcon from "@mui/icons-material/CardGiftcard";
+import styled from "@emotion/styled";
+
+const ButtonComp = styled("button")(({ theme }) => ({
+  backgroundColor: "#ff3d00",
+  padding: "5px 20px",
+  borderRadius: 0,
+  marginBottom: "20px",
+  border: "none",
+  color: "white",
+  fontSize: "18px",
+}));
 
 const Cart = () => {
   return (
@@ -55,13 +64,13 @@ const Cart = () => {
               variant="contained"
               aria-label="outlined primary button group"
             >
-              <Button>
+              <Button sx={{ backgroundColor: "#ff3d00", borderRadius: 0 }}>
                 <RemoveIcon />
               </Button>
               <Button sx={{ backgroundColor: "#607d8b", fontSize: "15px" }}>
                 3
               </Button>
-              <Button>
+              <Button sx={{ backgroundColor: "#ff3d00", borderRadius: 0 }}>
                 <AddIcon />
               </Button>
             </ButtonGroup>
@@ -98,13 +107,13 @@ const Cart = () => {
               variant="contained"
               aria-label="outlined primary button group"
             >
-              <Button>
+              <Button sx={{ backgroundColor: "#ff3d00", borderRadius: 0 }}>
                 <RemoveIcon />
               </Button>
               <Button sx={{ backgroundColor: "#607d8b", fontSize: "15px" }}>
                 3
               </Button>
-              <Button>
+              <Button sx={{ backgroundColor: "#ff3d00", borderRadius: 0 }}>
                 <AddIcon />
               </Button>
             </ButtonGroup>
@@ -122,9 +131,9 @@ const Cart = () => {
               />
             </Stack>
 
-            <Button variant="outlined" size="small" fontWeight={"bold"}>
+            <ButtonComp variant="outlined" size="small" fontWeight={"bold"}>
               Apply Coupon
-            </Button>
+            </ButtonComp>
           </Stack>
           <Stack
             direction="row"
@@ -133,9 +142,9 @@ const Cart = () => {
             marginTop={4}
             marginLeft={4}
           >
-            <Button variant="outlined" size="small">
+            <ButtonComp variant="outlined" size="small">
               Update Cart
-            </Button>
+            </ButtonComp>
           </Stack>
         </Grid>
 
@@ -200,7 +209,17 @@ const Cart = () => {
               </Typography>
             </Stack>
             <Stack direction="row" marginTop={3} justifyContent={"center"}>
-              <Button variant="outlined" sx={{ px: 6, py: 1 }}>
+              <Button
+                variant="outlined"
+                sx={{
+                  backgroundColor: "#ff3d00",
+                  px: 10,
+                  py: 1,
+                  color: "white",
+                  fontWeight: "bold",
+                  borderRadius: 0,
+                }}
+              >
                 Procced to checkout
               </Button>
             </Stack>

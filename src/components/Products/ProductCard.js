@@ -6,6 +6,7 @@ import {
   CardContent,
   CardMedia,
   Divider,
+  Grid,
   IconButton,
   TablePagination,
   Tooltip,
@@ -159,25 +160,26 @@ const ProductCard = () => {
       <BoxWrap>
         {item
           .slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
-          .map((item) => (
+          .map((product) => (
             <CardWrapper>
               <Card sx={{ maxWidth: 345, width: 280 }} key={item.id}>
                 <CardActionArea>
                   <CardMedia
                     component="img"
                     height="350"
-                    src={item.image}
+                    width="100"
+                    src={product.image}
                     alt="green iguana"
                   />
                   <CardContent>
-                    <ProductTitle>{item.title}</ProductTitle>
-                    <PriceTag>${item.price}</PriceTag>
+                    <ProductTitle>{product.title}</ProductTitle>
+                    <PriceTag>${product.price}</PriceTag>
                   </CardContent>
                 </CardActionArea>
                 <Divider light />
                 <CardActions>
                   <Tooltip title="View">
-                    <Link to={`/single-page/${item.id}`}>
+                    <Link to={`/single-page/${product.id}`}>
                       <IconButton size="small" color="primary">
                         <PreviewIcon />
                       </IconButton>
@@ -185,7 +187,7 @@ const ProductCard = () => {
                   </Tooltip>
                   <Tooltip title="Edit">
                     <IconButton size="small" color="primary">
-                      <EditRoundedIcon />
+                      {/* <EditRoundedIcon /> */}
                     </IconButton>
                   </Tooltip>
                 </CardActions>
@@ -193,6 +195,7 @@ const ProductCard = () => {
             </CardWrapper>
           ))}
       </BoxWrap>
+
       <TablePagination
         sx={{ backgroundColor: "#eeeeee" }}
         rowsPerPageOptions={[5, 10, 15, 20]}

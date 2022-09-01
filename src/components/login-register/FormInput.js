@@ -7,7 +7,11 @@ const FormInput = () => {
       <Divider />
       <form>
         <TextField
-          sx={{ width: "100%", mt: "40px", mb: "10px" }}
+          sx={{
+            width: "100%",
+            mt: "40px",
+            mb: "10px",
+          }}
           required
           id="outlined-required"
           type="email"

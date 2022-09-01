@@ -30,6 +30,16 @@ const PropertiesWrapper = styled("p")(({ theme }) => ({
   fontFamily: "sans-serif",
 }));
 
+const ButtonComp = styled("button")(({ theme }) => ({
+  backgroundColor: "#ff3d00",
+  padding: "5px 20px",
+  borderRadius: 0,
+  marginBottom: "20px",
+  border: "none",
+  color: "white",
+  fontSize: "18px",
+}));
+
 const SingleProduct = () => {
   const [item, setItem] = useState([]);
 
@@ -48,7 +58,7 @@ const SingleProduct = () => {
         method: "GET",
       });
       const data = await res.json();
-      console.log("test", data);
+      // console.log("test", data);
       setItem(data);
     } catch (error) {
       console.log(error);
@@ -68,7 +78,7 @@ const SingleProduct = () => {
         >
           Shop
         </Link>
-        <Typography color="text.primary">Cake Flour</Typography>
+        <Typography color="text.primary">{item.title}</Typography>
       </Breadcrumbs>
       <Divider />
 
@@ -118,7 +128,7 @@ const SingleProduct = () => {
                 fontSize={"15px"}
                 gutterBottom
               >
-                (1 Customer review)
+                (1 customer reviews)
               </Typography>
             </Stack>
             <Typography
@@ -132,23 +142,25 @@ const SingleProduct = () => {
             <br /> <br />
             <Stack direction="row" spacing={2}>
               <ButtonGroup
+                size="small"
                 variant="contained"
                 aria-label="outlined primary button group"
               >
-                <Button>
+                <Button sx={{ backgroundColor: "#ff3d00", borderRadius: 0 }}>
                   <RemoveIcon />
                 </Button>
-                <Button sx={{ backgroundColor: "#607d8b", fontSize: "20px" }}>
+                <Button sx={{ backgroundColor: "#607d8b", fontSize: "15px" }}>
                   1
                 </Button>
-                <Button>
+                <Button sx={{ backgroundColor: "#ff3d00", borderRadius: 0 }}>
                   <AddIcon />
                 </Button>
               </ButtonGroup>
 
-              <Button sx={{ ml: "10px" }} variant="contained">
+              {/* <Button sx={{ ml: "10px" }} variant="contained">
                 Add to cart
-              </Button>
+              </Button> */}
+              <ButtonComp variant="contained">Add to cart</ButtonComp>
             </Stack>
           </Typography>
           <Typography>

@@ -12,6 +12,7 @@ import SearchRoundedIcon from "@mui/icons-material/SearchRounded";
 import AddOutlinedIcon from "@mui/icons-material/AddOutlined";
 import MenuIcon from "@mui/icons-material/Menu";
 import AddShoppingCartIcon from "@mui/icons-material/AddShoppingCart";
+import { Link } from "react-router-dom";
 
 const Header = () => {
   return (
@@ -35,15 +36,19 @@ const Header = () => {
           </IconButton>
 
           <IconButton color="inherit">
-            <Badge badgeContent={4} color="primary">
-              <AddShoppingCartIcon color="action" />
-            </Badge>
+            <Link to="/cart">
+              <Badge badgeContent={4} color="primary">
+                <AddShoppingCartIcon color="action" />
+              </Badge>
+            </Link>
           </IconButton>
           <IconButton color="inherit">
-            <Avatar
-              sx={{ width: 30, height: 30, cursor: "pointer" }}
-              src="https://png.pngtree.com/png-vector/20190710/ourmid/pngtree-user-vector-avatar-png-image_1541962.jpg"
-            />
+            <Link to="/my-account">
+              <Avatar
+                sx={{ width: 30, height: 30, cursor: "pointer" }}
+                src="https://png.pngtree.com/png-vector/20190710/ourmid/pngtree-user-vector-avatar-png-image_1541962.jpg"
+              />
+            </Link>
           </IconButton>
           <IconButton color="inherit">
             <Fab
