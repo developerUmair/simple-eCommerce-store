@@ -15,10 +15,12 @@ import {
   TextField,
 } from "@mui/material";
 import { Stack } from "@mui/system";
+import LoginForm from "./LoginForm";
+import SignupForm from "./SignupForm";
 
 const LoginComp = () => {
   const ButtonComp = styled("button")(({ theme }) => ({
-    backgroundColor: "#ff3d00",
+    backgroundColor: "#a535f0",
     padding: "10px 40px",
     borderRadius: 0,
     marginBottom: "20px",
@@ -59,29 +61,7 @@ const LoginComp = () => {
         >
           <div className="page">
             <label>Login Form</label>
-            <form>
-              <TextField
-                sx={{ width: "100%", mt: "40px", mb: "10px" }}
-                required
-                id="outlined-required"
-                type="email"
-                label="Email"
-              />
-
-              <TextField
-                sx={{ width: "100%", mt: "10px", mb: "20px" }}
-                id="outlined-password-input"
-                label="Password"
-                type="password"
-                autoComplete="current-password"
-              />
-            </form>
-            <Stack direction="row" spacing={2}>
-              <ButtonComp variant="contained">Login</ButtonComp>
-              <FormGroup>
-                <FormControlLabel control={<Checkbox />} label="Remember me" />
-              </FormGroup>
-            </Stack>
+            <LoginForm />
             <Link
               variant="p"
               sx={{
@@ -97,32 +77,7 @@ const LoginComp = () => {
         <TabPanel value="2" sx={{ display: "flex", justifyContent: "center" }}>
           <div className="page">
             <label>Sign Up Form</label>
-            <form>
-              <TextField
-                sx={{ width: "100%", mt: "40px" }}
-                required
-                id="outlined-required"
-                type="email"
-                label="Email"
-              />
-
-              <TextField
-                sx={{ width: "100%", mt: "20px" }}
-                required
-                id="outlined-required"
-                type="text"
-                label="Username"
-              />
-
-              <TextField
-                sx={{ width: "100%", mt: "20px", mb: "20px" }}
-                id="outlined-password-input"
-                label="Password"
-                type="password"
-                autoComplete="current-password"
-              />
-              <ButtonComp variant="contained">Register</ButtonComp>
-            </form>
+            <SignupForm />
           </div>
         </TabPanel>
       </TabContext>

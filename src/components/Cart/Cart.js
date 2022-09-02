@@ -18,9 +18,10 @@ import AddIcon from "@mui/icons-material/Add";
 import { Stack } from "@mui/system";
 import CardGiftcardIcon from "@mui/icons-material/CardGiftcard";
 import styled from "@emotion/styled";
+import { Link } from "react-router-dom";
 
 const ButtonComp = styled("button")(({ theme }) => ({
-  backgroundColor: "#ff3d00",
+  backgroundColor: "#a535f0",
   padding: "5px 20px",
   borderRadius: 0,
   marginBottom: "20px",
@@ -64,13 +65,13 @@ const Cart = () => {
               variant="contained"
               aria-label="outlined primary button group"
             >
-              <Button sx={{ backgroundColor: "#ff3d00", borderRadius: 0 }}>
+              <Button sx={{ backgroundColor: "#a535f0", borderRadius: 0 }}>
                 <RemoveIcon />
               </Button>
               <Button sx={{ backgroundColor: "#607d8b", fontSize: "15px" }}>
                 3
               </Button>
-              <Button sx={{ backgroundColor: "#ff3d00", borderRadius: 0 }}>
+              <Button sx={{ backgroundColor: "#a535f0", borderRadius: 0 }}>
                 <AddIcon />
               </Button>
             </ButtonGroup>
@@ -107,13 +108,13 @@ const Cart = () => {
               variant="contained"
               aria-label="outlined primary button group"
             >
-              <Button sx={{ backgroundColor: "#ff3d00", borderRadius: 0 }}>
+              <Button sx={{ backgroundColor: "#a535f0", borderRadius: 0 }}>
                 <RemoveIcon />
               </Button>
               <Button sx={{ backgroundColor: "#607d8b", fontSize: "15px" }}>
                 3
               </Button>
-              <Button sx={{ backgroundColor: "#ff3d00", borderRadius: 0 }}>
+              <Button sx={{ backgroundColor: "#a535f0", borderRadius: 0 }}>
                 <AddIcon />
               </Button>
             </ButtonGroup>
@@ -209,19 +210,22 @@ const Cart = () => {
               </Typography>
             </Stack>
             <Stack direction="row" marginTop={3} justifyContent={"center"}>
-              <Button
-                variant="outlined"
-                sx={{
-                  backgroundColor: "#ff3d00",
-                  px: 10,
-                  py: 1,
-                  color: "white",
-                  fontWeight: "bold",
-                  borderRadius: 0,
-                }}
-              >
-                Procced to checkout
-              </Button>
+              <Link to="/my-account">
+                <Button
+                  variant="outlined"
+                  sx={{
+                    backgroundColor: "#a535f0",
+                    px: 10,
+                    py: 1,
+                    color: "white",
+                    fontWeight: "bold",
+                    borderRadius: 0,
+                    listSytleType: "none",
+                  }}
+                >
+                  Procced to checkout
+                </Button>
+              </Link>
             </Stack>
           </Grid>
         </Grid>

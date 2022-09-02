@@ -1,5 +1,8 @@
 import styled from "@emotion/styled";
 import {
+  Accordion,
+  AccordionDetails,
+  AccordionSummary,
   Checkbox,
   FormControlLabel,
   FormGroup,
@@ -7,11 +10,17 @@ import {
   TextField,
   Typography,
 } from "@mui/material";
-import { Box } from "@mui/system";
 import React from "react";
 import { inputLabelClasses } from "@mui/material/InputLabel";
+import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
+import PersonalinfoForm from "./PersonalinfoForm";
+import DeliveryAddressForm from "./DeliveryAddressForm";
+import PaymentMethodForm from "./PaymentMethodForm";
+import { Stack } from "@mui/system";
+import CartTotal from "./CartTotal";
 
 const TitleComp = styled("p")(({ theme }) => ({
+  color: "#a535f0",
   fontSize: "20px",
   padding: "5px 20px",
   fontWeight: "bold",
@@ -35,183 +44,24 @@ const MyAccount = () => {
       >
         My Account
       </Typography>
-      <Grid container spacing={2} sx={{ margin: "20px" }}>
+      <Grid container spacing={2} padding={2}>
         <Grid item xs={6} sx={{ textTransform: "none" }}>
           <TitleComp>Personal Information</TitleComp>
-          <form>
-            {" "}
-            <TextField
-              sx={{
-                width: "80%",
-                mb: "10px",
-              }}
-              size="small"
-              required
-              label="First Name"
-              type="text"
-              InputLabelProps={{
-                sx: {
-                  color: "orange",
-                  [`&.${inputLabelClasses.shrink}`]: {
-                    color: "red",
-                    textTransform: "none",
-                  },
-                },
-              }}
-            />
-            <TextField
-              sx={{
-                width: "80%",
-                mb: "10px",
-              }}
-              size="small"
-              type="text"
-              required
-              label="Last Name"
-              InputLabelProps={{
-                sx: {
-                  color: "orange",
-                  [`&.${inputLabelClasses.shrink}`]: {
-                    color: "red",
-                    textTransform: "none",
-                  },
-                },
-              }}
-            />
-            <TextField
-              sx={{
-                width: "80%",
-                mb: "10px",
-              }}
-              size="small"
-              type="email"
-              required
-              label="Email Address"
-              InputLabelProps={{
-                sx: {
-                  color: "orange",
-                  [`&.${inputLabelClasses.shrink}`]: {
-                    color: "red",
-                    textTransform: "none",
-                  },
-                },
-              }}
-            />
-            <TextField
-              sx={{
-                width: "80%",
-                mb: "10px",
-              }}
-              size="small"
-              type="number"
-              label="Phone Number"
-              InputLabelProps={{
-                sx: {
-                  color: "orange",
-                  [`&.${inputLabelClasses.shrink}`]: {
-                    color: "red",
-                    textTransform: "none",
-                  },
-                },
-              }}
-            />
-          </form>
+          <PersonalinfoForm />
         </Grid>
         <Grid item xs={6}>
           <TitleComp>Delivery Address</TitleComp>
-          <form>
-            <TextField
-              sx={{
-                width: "80%",
-                mb: "10px",
-              }}
-              size="small"
-              required
-              label="Address"
-              type="text"
-              InputLabelProps={{
-                sx: {
-                  color: "orange",
-                  [`&.${inputLabelClasses.shrink}`]: {
-                    color: "red",
-                    textTransform: "none",
-                  },
-                },
-              }}
-            />
-            <TextField
-              sx={{
-                width: "80%",
-                mb: "10px",
-              }}
-              size="small"
-              type="text"
-              label="Address 2 (Optional)"
-              InputLabelProps={{
-                sx: {
-                  color: "orange",
-                  [`&.${inputLabelClasses.shrink}`]: {
-                    color: "red",
-                    textTransform: "none",
-                  },
-                },
-              }}
-            />
-            <TextField
-              sx={{
-                width: "80%",
-                mb: "10px",
-              }}
-              size="small"
-              type="texxt"
-              required
-              label="City"
-              InputLabelProps={{
-                sx: {
-                  color: "orange",
-                  [`&.${inputLabelClasses.shrink}`]: {
-                    color: "red",
-                    textTransform: "none",
-                  },
-                },
-              }}
-            />
-            <TextField
-              sx={{
-                mb: "10px",
-              }}
-              size="small"
-              type="text"
-              label="State"
-              InputLabelProps={{
-                sx: {
-                  color: "orange",
-                  [`&.${inputLabelClasses.shrink}`]: {
-                    color: "red",
-                    textTransform: "none",
-                  },
-                },
-              }}
-            />
-            <TextField
-              sx={{
-                mb: "10px",
-                ml: "5px",
-              }}
-              size="small"
-              type="number"
-              label="Zip/Postal Code"
-              InputLabelProps={{
-                sx: {
-                  color: "orange",
-                  [`&.${inputLabelClasses.shrink}`]: {
-                    color: "red",
-                    textTransform: "none",
-                  },
-                },
-              }}
-            />
-          </form>
+          <DeliveryAddressForm />
+        </Grid>
+      </Grid>
+      <Grid container spacing={2} padding={2}>
+        <Grid item xs={6} sx={{ textTransform: "none" }}>
+          <TitleComp>Payment Method</TitleComp>
+          <PaymentMethodForm />
+        </Grid>
+        <Grid item xs={6}>
+          <TitleComp>Cart Totals</TitleComp>
+          <CartTotal />
         </Grid>
       </Grid>
     </div>

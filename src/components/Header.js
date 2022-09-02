@@ -29,7 +29,7 @@ const Header = () => {
             <MenuIcon />
           </IconButton>
           <Typography variant="h5" sx={{ flexGrow: 1, fontWeight: "bold" }}>
-            Orders
+            FlitKart
           </Typography>
           <IconButton color="inherit">
             <SearchRoundedIcon />

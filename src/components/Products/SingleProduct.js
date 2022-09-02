@@ -31,7 +31,7 @@ const PropertiesWrapper = styled("p")(({ theme }) => ({
 }));
 
 const ButtonComp = styled("button")(({ theme }) => ({
-  backgroundColor: "#ff3d00",
+  backgroundColor: "#a535f0",
   padding: "5px 20px",
   borderRadius: 0,
   marginBottom: "20px",
@@ -146,13 +146,13 @@ const SingleProduct = () => {
                 variant="contained"
                 aria-label="outlined primary button group"
               >
-                <Button sx={{ backgroundColor: "#ff3d00", borderRadius: 0 }}>
+                <Button sx={{ backgroundColor: "#a535f0", borderRadius: 0 }}>
                   <RemoveIcon />
                 </Button>
                 <Button sx={{ backgroundColor: "#607d8b", fontSize: "15px" }}>
                   1
                 </Button>
-                <Button sx={{ backgroundColor: "#ff3d00", borderRadius: 0 }}>
+                <Button sx={{ backgroundColor: "#a535f0", borderRadius: 0 }}>
                   <AddIcon />
                 </Button>
               </ButtonGroup>
