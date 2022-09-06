@@ -1,6 +1,7 @@
 import { Box, Button, Typography } from "@mui/material";
 import { Stack } from "@mui/system";
 import React from "react";
+import { Link } from "react-router-dom";
 
 const CartTotal = () => {
   return (
@@ -40,6 +41,7 @@ const CartTotal = () => {
             $200
           </Typography>
         </Stack>
+
         <Button
           variant="outlined"
           sx={{
@@ -53,7 +55,12 @@ const CartTotal = () => {
             listSytleType: "none",
           }}
         >
-          Checkout
+          <Link
+            to="/invoice"
+            style={{ textDecoration: "none", color: "white" }}
+          >
+            Checkout
+          </Link>
         </Button>
       </Stack>
     </>

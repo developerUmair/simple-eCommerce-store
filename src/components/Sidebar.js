@@ -23,12 +23,12 @@ const Sidebar = () => {
         component="nav"
         aria-labelledby="nested-list-subheader"
       >
-        <Link to="/">
+        <Link to="/" style={{ textDecoration: "none" }}>
           <ListItemButton>
             <ListItemText primary="Home" />
           </ListItemButton>
         </Link>
-        <Link to="/users">
+        <Link to="/users" style={{ textDecoration: "none" }}>
           <ListItemButton>
             <ListItemText primary="People" />
           </ListItemButton>
@@ -39,7 +39,7 @@ const Sidebar = () => {
         </ListItemButton>
         <Collapse in={open} timeout="auto" unmountOnExit>
           <List component="div" disablePadding>
-            <Link to="/products">
+            <Link to="/products" style={{ textDecoration: "none" }}>
               <ListItemButton sx={{ pl: 3 }}>
                 <ListItemText primary="Products" />
               </ListItemButton>

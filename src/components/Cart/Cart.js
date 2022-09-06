@@ -210,7 +210,7 @@ const Cart = () => {
               </Typography>
             </Stack>
             <Stack direction="row" marginTop={3} justifyContent={"center"}>
-              <Link to="/my-account">
+              <Link to="/my-account" style={{ textDecoration: "none" }}>
                 <Button
                   variant="outlined"
                   sx={{
