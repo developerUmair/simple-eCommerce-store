@@ -1,5 +1,5 @@
+import styled from "@emotion/styled";
 import { Divider, Grid, Typography } from "@mui/material";
-import { purple } from "@mui/material/colors";
 import { Box } from "@mui/system";
 import React from "react";
 
@@ -41,6 +41,15 @@ const Invoice = () => {
       price: "- 20% (39.99)",
     },
   ];
+
+  const TitleGray = styled("p")(({ theme }) => ({
+    color: "gray",
+    margin: "10px",
+  }));
+  const Titleblack = styled("p")(({ theme }) => ({
+    color: "#222",
+    margin: "10px",
+  }));
   return (
     <>
       <div style={{ background: "#F9FAFB" }}>
@@ -56,26 +65,24 @@ const Invoice = () => {
           src="../assets/images/ecommerce_logo.png"
         />
       </div>
-      <Typography variant="h3" color="gray" m="10px" gutterBottom>
+      <TitleGray gutterBottom style={{ fontSize: "40px" }}>
         Your Order Confirmed!
-      </Typography>
-      <Typography variant="h5" color="gray" m="10px">
-        Hey, John Doe
-      </Typography>
-      <Typography variant="h6" color="#222" m="10px">
+      </TitleGray>
+      <TitleGray style={{ fontSize: "22px" }}>Hey, John Doe</TitleGray>
+      <Titleblack style={{ fontSize: "25px" }}>
         Your order has been confirmed and will be shipping soon.
-      </Typography>
+      </Titleblack>
       <Divider />
 
       <Grid container spacing={2} sx={{ padding: "10px 0px" }}>
         {orderData.map((data) => (
           <Grid item xs={3}>
-            <Typography variant="h6" color="gray" m="10px">
+            <TitleGray style={{ fontSize: "20px" }}>
               {data.order_title}
-            </Typography>
-            <Typography variant="h6" color="#222" m="10px">
+            </TitleGray>
+            <Titleblack style={{ fontSize: "24px" }}>
               {data.description}
-            </Typography>
+            </Titleblack>
           </Grid>
         ))}
       </Grid>
@@ -100,18 +107,10 @@ const Invoice = () => {
           alignItems="center"
         >
           <div>
-            <Typography
-              variant="h5"
-              color="#222"
-              fontSize="30px"
-              m="10px"
-              gutterBottom
-            >
+            <Titleblack style={{ fontSize: "30px" }}>
               Complete Bee Hive and flour for baking.
-            </Typography>
-            <Typography variant="h6" color="gray" m="10px" gutterBottom>
-              Cake Flour Sante
-            </Typography>
+            </Titleblack>
+            <TitleGray style={{ fontSize: "22px" }}>Cake Flour Sante</TitleGray>
           </div>
         </Grid>
         <Grid
@@ -121,9 +120,7 @@ const Invoice = () => {
           justifyContent="center"
           alignItems="center"
         >
-          <Typography variant="h6" color="gray" m="10px" gutterBottom>
-            Qty 1
-          </Typography>
+          <TitleGray style={{ fontSize: "20px" }}>Qty 1</TitleGray>
         </Grid>
         <Grid
           item
@@ -132,9 +129,7 @@ const Invoice = () => {
           justifyContent="center"
           alignItems="center"
         >
-          <Typography variant="h6" color="gray" m="10px" gutterBottom>
-            $199.99
-          </Typography>
+          <TitleGray style={{ fontSize: "20px" }}>$199.99</TitleGray>
         </Grid>
       </Grid>
       <Divider />
@@ -148,14 +143,12 @@ const Invoice = () => {
           }}
         >
           <Grid item>
-            <Typography variant="h5" color="#222" gutterBottom>
+            <Titleblack style={{ fontSize: "24px" }}>
               {data.price_title}
-            </Typography>
+            </Titleblack>
           </Grid>
           <Grid item>
-            <Typography variant="h6" color="gray" gutterBottom>
-              ${data.price}
-            </Typography>
+            <TitleGray style={{ fontSize: "20px" }}>${data.price}</TitleGray>
           </Grid>
         </Grid>
       ))}
@@ -169,27 +162,23 @@ const Invoice = () => {
         }}
       >
         <Grid item>
-          <Typography variant="h5" color="#222" gutterBottom>
-            Total
-          </Typography>
+          <Titleblack style={{ fontSize: "24px" }}>Total</Titleblack>
         </Grid>
         <Grid item>
-          <Typography variant="h5" color="#222" gutterBottom>
-            $180.98
-          </Typography>
+          <Titleblack style={{ fontSize: "24px" }}>$180.98</Titleblack>
         </Grid>
       </Grid>
       <Divider />
-      <Typography variant="h5" color="#222" padding="40px 50px 40px 10px">
+      <Titleblack style={{ fontSize: "24px" }} padding="40px 50px 40px 10px">
         We'll send you shipping confirmation when your item(s) are on the way!
         We appreciate your business, and hope enjoy your purchase.
-      </Typography>
-      <Typography variant="h5" color="#222" padding="10px 50px 10px 10px">
+      </Titleblack>
+      <Titleblack style={{ fontSize: "24px", padding: "10px 50px 10px 10px" }}>
         Thank you!
-      </Typography>
-      <Typography variant="h5" color="gray" padding="10px 50px 20px 10px">
+      </Titleblack>
+      <TitleGray style={{ fontSize: "25px", padding: "10px 50px 30px 10px" }}>
         Bekeeper Supplies
-      </Typography>
+      </TitleGray>
 
       <Grid
         container
