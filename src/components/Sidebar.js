@@ -44,12 +44,16 @@ const Sidebar = () => {
                 <ListItemText primary="Products" />
               </ListItemButton>
             </Link>
-            <ListItemButton sx={{ pl: 3 }}>
-              <ListItemText primary="orders" />
-            </ListItemButton>
-            <ListItemButton sx={{ pl: 3 }}>
-              <ListItemText primary="Discounts" />
-            </ListItemButton>
+            <Link to="/orders" style={{ textDecoration: "none" }}>
+              <ListItemButton sx={{ pl: 3 }}>
+                <ListItemText primary="orders" />
+              </ListItemButton>
+            </Link>
+            <Link to="/cart" style={{ textDecoration: "none" }}>
+              <ListItemButton sx={{ pl: 3 }}>
+                <ListItemText primary="Cart" />
+              </ListItemButton>
+            </Link>
             <ListItemButton sx={{ pl: 3 }}>
               <ListItemText primary="Licenses" />
             </ListItemButton>

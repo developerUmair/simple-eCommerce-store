@@ -31,11 +31,73 @@ const ButtonComp = styled("button")(({ theme }) => ({
 }));
 
 const Cart = () => {
+  const cartData = [
+    {
+      id: 1,
+      product_image: "../assets/images/product-1.jpg",
+      product_title: "Head Phones",
+      product_price: "50.00",
+      total_price: "75.00",
+    },
+    {
+      id: 2,
+      product_image: "../assets/images/product-2.jpg",
+      product_title: "Loud Speakers",
+      product_price: "200.00",
+      total_price: "75.00",
+    },
+  ];
   return (
     <div>
       <CartHeader />
       <Grid container spacing={2}>
         <Grid xs={6} margin={2}>
+          {cartData.map((item) => (
+            <Grid
+              key={item.id}
+              item
+              xs={12}
+              margin={2}
+              sx={{
+                display: "flex",
+                justifyContent: "space-around",
+                alignItems: "center",
+              }}
+            >
+              <CloseIcon fontSize="10" />
+              <Box
+                component="img"
+                sx={{
+                  height: 60,
+                  width: 60,
+                }}
+                alt={item.product_title}
+                src={item.product_image}
+              />
+              <Typography variant="h6">{item.product_title}</Typography>
+              <Typography variant="h6" fontSize={18}>
+                ${item.product_price}
+              </Typography>
+              <ButtonGroup
+                size="small"
+                variant="contained"
+                aria-label="outlined primary button group"
+              >
+                <Button sx={{ backgroundColor: "#a535f0", borderRadius: 0 }}>
+                  <RemoveIcon />
+                </Button>
+                <Button sx={{ backgroundColor: "#607d8b", fontSize: "15px" }}>
+                  3
+                </Button>
+                <Button sx={{ backgroundColor: "#a535f0", borderRadius: 0 }}>
+                  <AddIcon />
+                </Button>
+              </ButtonGroup>
+              <Typography variant="h6" fontSize={18}>
+                ${item.total_price}
+              </Typography>
+            </Grid>
+          ))}
           <Grid
             item
             xs={12}
@@ -45,83 +107,7 @@ const Cart = () => {
               justifyContent: "space-around",
               alignItems: "center",
             }}
-          >
-            <CloseIcon fontSize="10" />
-            <Box
-              component="img"
-              sx={{
-                height: 60,
-                width: 60,
-              }}
-              alt="The house from the offer."
-              src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&w=350&dpr=2"
-            />
-            <Typography variant="h6">Cake Flour</Typography>
-            <Typography variant="h6" fontSize={18}>
-              $50.00
-            </Typography>
-            <ButtonGroup
-              size="small"
-              variant="contained"
-              aria-label="outlined primary button group"
-            >
-              <Button sx={{ backgroundColor: "#a535f0", borderRadius: 0 }}>
-                <RemoveIcon />
-              </Button>
-              <Button sx={{ backgroundColor: "#607d8b", fontSize: "15px" }}>
-                3
-              </Button>
-              <Button sx={{ backgroundColor: "#a535f0", borderRadius: 0 }}>
-                <AddIcon />
-              </Button>
-            </ButtonGroup>
-            <Typography variant="h6" fontSize={18}>
-              $75.00
-            </Typography>
-          </Grid>
-          <Grid
-            item
-            xs={12}
-            margin={2}
-            sx={{
-              display: "flex",
-              justifyContent: "space-around",
-              alignItems: "center",
-            }}
-          >
-            <CloseIcon fontSize="10" />
-            <Box
-              component="img"
-              sx={{
-                height: 60,
-                width: 60,
-              }}
-              alt="The house from the offer."
-              src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&w=350&dpr=2"
-            />
-            <Typography variant="h6">Cake Flour</Typography>
-            <Typography variant="h6" fontSize={18}>
-              $50.00
-            </Typography>
-            <ButtonGroup
-              size="small"
-              variant="contained"
-              aria-label="outlined primary button group"
-            >
-              <Button sx={{ backgroundColor: "#a535f0", borderRadius: 0 }}>
-                <RemoveIcon />
-              </Button>
-              <Button sx={{ backgroundColor: "#607d8b", fontSize: "15px" }}>
-                3
-              </Button>
-              <Button sx={{ backgroundColor: "#a535f0", borderRadius: 0 }}>
-                <AddIcon />
-              </Button>
-            </ButtonGroup>
-            <Typography variant="h6" fontSize={18}>
-              $75.00
-            </Typography>
-          </Grid>
+          ></Grid>
           <Stack direction="row" spacing={2} justifyContent={"space-between"}>
             <Stack direction="row" spacing={2} justifyContent={"center"}>
               <CardGiftcardIcon />

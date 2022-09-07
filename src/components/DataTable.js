@@ -304,12 +304,24 @@ export default function DataTable() {
                 <TableCell component="th" scope="row">
                   <Checkbox />
                 </TableCell>
-                <TableCell align="left">#{data.hash}</TableCell>
-                <TableCell align="left">{data.date}</TableCell>
+                <TableCell
+                  align="left"
+                  sx={{ color: "gray", fontWeight: "bold" }}
+                >
+                  #{data.hash}
+                </TableCell>
+                <TableCell
+                  align="left"
+                  sx={{ color: "gray", fontWeight: "bold" }}
+                >
+                  {data.date}
+                </TableCell>
                 <TableCell align="left">
                   <Stack direction="row" spacing={2}>
                     {data.status_icon}
-                    <Typography fontSize={"15px"}>{data.status}</Typography>
+                    <Typography fontSize={"15px"} sx={{ fontWeight: "bold" }}>
+                      {data.status}
+                    </Typography>
                   </Stack>
                 </TableCell>
 
@@ -320,14 +332,23 @@ export default function DataTable() {
                       sx={{ width: 30, height: 30, cursor: "pointer" }}
                       src={data.image_url}
                     />
-                    <Typography fontSize={"15px"}>
+                    <Typography fontSize={"15px"} sx={{ fontWeight: "bold" }}>
                       {data.customer_name}
                     </Typography>
                   </Stack>
                 </TableCell>
-                <TableCell align="left">{data.purchased}</TableCell>
-                <TableCell align="left">${data.price}</TableCell>
-                <TableCell align="left">{data.more}</TableCell>
+                <TableCell
+                  align="left"
+                  sx={{ color: "gray", fontWeight: "bold" }}
+                >
+                  {data.purchased}
+                </TableCell>
+                <TableCell align="left" sx={{ fontWeight: "bold" }}>
+                  ${data.price}
+                </TableCell>
+                <TableCell align="left" sx={{ color: "gray" }}>
+                  {data.more}
+                </TableCell>
               </TableRow>
             ))}
         </TableBody>

@@ -1,4 +1,3 @@
-import styled from "@emotion/styled";
 import React from "react";
 import Box from "@mui/material/Box";
 import Tab from "@mui/material/Tab";
@@ -7,27 +6,12 @@ import TabList from "@mui/lab/TabList";
 import TabPanel from "@mui/lab/TabPanel";
 
 import "./Form.css";
-import {
-  Checkbox,
-  FormControlLabel,
-  FormGroup,
-  Link,
-  TextField,
-} from "@mui/material";
-import { Stack } from "@mui/system";
+import { Link } from "@mui/material";
+
 import LoginForm from "./LoginForm";
 import SignupForm from "./SignupForm";
 
 const LoginComp = () => {
-  const ButtonComp = styled("button")(({ theme }) => ({
-    backgroundColor: "#a535f0",
-    padding: "10px 40px",
-    borderRadius: 0,
-    marginBottom: "20px",
-    border: "none",
-    color: "white",
-    fontSize: "18px",
-  }));
   const [value, setValue] = React.useState("1");
 
   const handleChange = (event, newValue) => {
@@ -39,7 +23,6 @@ const LoginComp = () => {
       sx={{
         width: "100%",
         typography: "body1",
-        // display: "flex",
         justifyContent: "center",
         minHeight: "550px",
       }}
@@ -74,7 +57,10 @@ const LoginComp = () => {
             </Link>
           </div>
         </TabPanel>
-        <TabPanel value="2" sx={{ display: "flex", justifyContent: "center" }}>
+        <TabPanel
+          value="2"
+          sx={{ display: "flex", justifyContent: "center", mt: "-50px" }}
+        >
           <div className="page">
             <label>Sign Up Form</label>
             <SignupForm />

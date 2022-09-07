@@ -7,6 +7,8 @@ import {
 } from "@mui/material";
 import { Stack } from "@mui/system";
 import React from "react";
+import { useFormik } from "formik";
+import { AuthenticationSchema } from "./AuthenticationSchema";
 
 const ButtonComp = styled("button")(({ theme }) => ({
   backgroundColor: "#a535f0",
@@ -18,32 +20,66 @@ const ButtonComp = styled("button")(({ theme }) => ({
   fontSize: "18px",
 }));
 
+const initialValues = {
+  name: "",
+  email: "",
+  password: "",
+};
+
 const LoginForm = () => {
+  const { values, touched, errors, handleBlur, handleChange, handleSubmit } =
+    useFormik({
+      initialValues: initialValues,
+      validationSchema: AuthenticationSchema,
+      onSubmit: (values) => {
+        console.log(values);
+        alert("Submit");
+      },
+    });
   return (
     <div>
-      <form>
+      <form onSubmit={handleSubmit}>
         <TextField
-          sx={{ width: "100%", mt: "40px", mb: "10px" }}
-          required
-          id="outlined-required"
+          helperText=""
+          sx={{ width: "100%", mt: "40px" }}
           type="email"
+          name="email"
           label="Email"
+          size="small"
+          value={values.email}
+          onChange={handleChange}
+          onBlur={handleBlur}
         />
+        {errors.email && touched.email ? (
+          <p style={{ color: "red", fontSize: "15px" }}>{errors.email}</p>
+        ) : null}
 
         <TextField
-          sx={{ width: "100%", mt: "10px", mb: "20px" }}
-          id="outlined-password-input"
+          helperText=""
+          sx={{ width: "100%", mt: "20px" }}
           label="Password"
+          name="password"
           type="password"
           autoComplete="current-password"
+          size="small"
+          value={values.password}
+          onChange={handleChange}
+          onBlur={handleBlur}
         />
-      </form>
-      <Stack direction="row" spacing={2}>
-        <ButtonComp variant="contained">Login </ButtonComp>
-        <FormGroup>
+        {errors.password && touched.password ? (
+          <p style={{ color: "red", fontSize: "15px" }}>{errors.password}</p>
+        ) : null}
+        <Stack direction="col" spacing={2}>
+          <ButtonComp
+            variant="contained"
+            type="submit"
+            style={{ marginTop: "20px" }}
+          >
+            Login{" "}
+          </ButtonComp>
           <FormControlLabel control={<Checkbox />} label="Remember me" />
-        </FormGroup>
-      </Stack>
+        </Stack>
+      </form>
     </div>
   );
 };
